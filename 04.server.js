@@ -9,7 +9,7 @@ const http = require('http'),
     returned_at : date
   },
   ERROR = {
-    message : 'Deu Merda!!!'
+    message : 'Não encontrado!!!'
   }
 
 let handler = (req, res) => {
@@ -17,7 +17,7 @@ let handler = (req, res) => {
     res.writeHead(200, {'Content-Type':'application/json'});
     res.write(JSON.stringify(SUCCESS));
   }else{
-    res.writeHead(404, {'Content-Type':'application/json'});
+    res.writeHead(404, {'Content-Type':'application/json; charset=utf-8'});
     res.write(JSON.stringify(ERROR));
   }
   res.end();
